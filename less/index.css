@@ -1,0 +1,526 @@
+/* 需要引入公共样式在index.less里面引入  就没有必要在页面中引入多个文件减少请求*/
+/* 样式初始化 */
+html {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+}
+body {
+  margin: 0;
+  font-size: 0.373333333rem;
+  line-height: 1.5;
+  color: #333333;
+  background-color: white;
+  height: 100%;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+  display: block;
+}
+audio,
+canvas,
+progress,
+video {
+  display: inline-block;
+  vertical-align: baseline;
+}
+audio:not([controls]) {
+  display: none;
+  height: 0;
+}
+[hidden],
+template {
+  display: none;
+}
+svg:not(:root) {
+  overflow: hidden;
+}
+a {
+  background: transparent;
+  text-decoration: none;
+  /* 设置a标签的高亮背景色  手指按住的时候会出现 */
+  -webkit-tap-highlight-color: transparent;
+  color: #666;
+}
+a:active {
+  outline: 0;
+}
+a:active {
+  color: #006699;
+}
+abbr[title] {
+  border-bottom: 1px dotted;
+}
+b,
+strong {
+  font-weight: bold;
+}
+dfn {
+  font-style: italic;
+}
+mark {
+  background: #ff0;
+  color: #000;
+}
+small {
+  font-size: 80%;
+}
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+sup {
+  top: -0.5em;
+}
+sub {
+  bottom: -0.25em;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+pre {
+  overflow: auto;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+button {
+  overflow: visible;
+}
+button,
+select {
+  text-transform: none;
+}
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  cursor: pointer;
+}
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+input {
+  line-height: normal;
+  border: 0;
+  outline: 0;
+}
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 0.05405405405405406rem;
+  padding: 0.35em 0.625em 0.75em;
+}
+legend {
+  border: 0;
+  padding: 0;
+}
+textarea {
+  overflow: auto;
+  resize: vertical;
+}
+optgroup {
+  font-weight: bold;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+td,
+th {
+  padding: 0;
+}
+html,
+button,
+input,
+select,
+textarea {
+  font-family: "Helvetica Neue", Helvetica, STHeiTi, Arial, sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+form,
+blockquote {
+  margin: 0;
+}
+ul,
+ol,
+li,
+dl,
+dd {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol {
+  list-style: none outside none;
+}
+h1,
+h2,
+h3 {
+  line-height: 2;
+  font-weight: normal;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+  color: #cccccc;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+  color: #cccccc;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+  color: #cccccc;
+}
+* {
+  /*移动端禁止出现水平方向滚动条 都要设置box-sizing:border-box 为了让盒子设置了边框padding不会加的盒子的大小*/
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* 公共类 */
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.text-center {
+  text-align: center;
+}
+.clearfix::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+/* 定义一些边框类名 */
+.bt {
+  border-top: 1px solid #ccc;
+}
+.bb {
+  border-bottom: 1px solid #ccc;
+}
+.bl {
+  border-left: 1px solid #ccc;
+}
+.br {
+  border-right: 1px solid #ccc;
+}
+body {
+  /* 是为了让页面的内容往上挤50px 不要和底部重叠在一起 */
+  padding-bottom: 1.3513513513513513rem;
+}
+/* 创建一个函数用来存放冗余的样式 */
+/* jd头部的公共样式 */
+#header {
+  display: flex;
+  background-color: rgba(222, 24, 27, 0);
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  /* 首页logo */
+  /* 首页表单 */
+  /* 首页登录按钮 */
+  /* 分类页面返回按钮 */
+  /* 菜单按钮 */
+}
+#header .icon-logo {
+  width: 2.1621621621621623rem;
+  height: 1.2162162162162162rem;
+  padding: 0.21621621621621623rem 0.2702702702702703rem;
+  background-position: 0 -2.97297297rem;
+  background-image: url(../images/sprites.png);
+  /* 设置背景图大小 背景图也是图片也是按照分辨率来设计的写代码都是按照真实宽高 背景图整体大小要缩小1半 */
+  background-size: 5.405405405405405rem 5.405405405405405rem;
+  /* 改变背景图定位起点从内容区域开始定位 */
+  background-origin: content-box;
+  /* 裁切除了内容区域以外的背景 */
+  background-clip: content-box;
+}
+#header form {
+  flex: 1;
+  padding-top: 0.1891891891891892rem;
+  position: relative;
+}
+#header form .icon-search {
+  width: 0.5405405405405406rem;
+  height: 0.5405405405405406rem;
+  background-image: url(../images/sprites.png);
+  /* 设置背景图大小 背景图也是图片也是按照分辨率来设计的写代码都是按照真实宽高 背景图整体大小要缩小1半 */
+  background-size: 5.405405405405405rem 5.405405405405405rem;
+  /* 改变背景图定位起点从内容区域开始定位 */
+  background-origin: content-box;
+  /* 裁切除了内容区域以外的背景 */
+  background-clip: content-box;
+  background-position: -1.62162162rem -2.97297297rem;
+  position: absolute;
+  left: 0.13513513513513514rem;
+  top: 0.32432432432432434rem;
+}
+#header form input {
+  width: 100%;
+  height: 0.8108108108108109rem;
+  border-radius: 15px;
+  padding-left: 0.8108108108108109rem;
+}
+#header .login {
+  width: 1.3513513513513513rem;
+  height: 1.2162162162162162rem;
+  line-height: 1.2162162162162162rem;
+  text-align: center;
+  color: #fff;
+}
+#header .icon-back {
+  width: 1.0810810810810811rem;
+  height: 1.2162162162162162rem;
+  padding: 0.32432432432432434rem 0.2702702702702703rem;
+  background-image: url(../images/sprites.png);
+  /* 设置背景图大小 背景图也是图片也是按照分辨率来设计的写代码都是按照真实宽高 背景图整体大小要缩小1半 */
+  background-size: 5.405405405405405rem 5.405405405405405rem;
+  /* 改变背景图定位起点从内容区域开始定位 */
+  background-origin: content-box;
+  /* 裁切除了内容区域以外的背景 */
+  background-clip: content-box;
+  background-position: -0.54054054rem 0;
+}
+#header .icon-menu {
+  width: 1.0810810810810811rem;
+  height: 1.2162162162162162rem;
+  padding: 0.32432432432432434rem 0.2702702702702703rem;
+  background-image: url(../images/sprites.png);
+  /* 设置背景图大小 背景图也是图片也是按照分辨率来设计的写代码都是按照真实宽高 背景图整体大小要缩小1半 */
+  background-size: 5.405405405405405rem 5.405405405405405rem;
+  /* 改变背景图定位起点从内容区域开始定位 */
+  background-origin: content-box;
+  /* 裁切除了内容区域以外的背景 */
+  background-clip: content-box;
+  background-position: -1.62162162rem 0;
+}
+/* jd底部区域的公共样式 */
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 1.3513513513513513rem;
+  background-color: #fff;
+  z-index: 999;
+}
+#footer ul {
+  display: flex;
+  justify-content: space-around;
+}
+#footer ul li {
+  flex: 1;
+}
+#footer ul li a {
+  display: block;
+  text-align: center;
+}
+#footer ul li a img {
+  width: 1.7567567567567568rem;
+  height: 1.3513513513513513rem;
+}
+/* 轮播图区域样式 */
+#slide img {
+  width: 100%;
+}
+/* 导航区域 */
+#nav {
+  padding: 0.13513513513513514rem;
+}
+#nav > ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}
+#nav > ul > li {
+  margin-top: 0.2702702702702703rem;
+  width: 25%;
+}
+#nav > ul > li > a {
+  display: block;
+}
+#nav > ul > li > a > img {
+  width: 1.0810810810810811rem;
+  height: 1.0810810810810811rem;
+}
+#nav > ul > li > a p {
+  margin: 0.13513513513513514rem 0px;
+}
+/* 主体模块 */
+#main {
+  background-color: #f5f5f5;
+  padding: 0.2702702702702703rem;
+  /* 京东秒杀区域 */
+  /* 京东超市区域 */
+}
+#main .seckill {
+  box-shadow: 0px 0px 0.13513513513513514rem #ccc;
+  background-color: #fff;
+}
+#main .seckill .seckill-title {
+  height: 0.8108108108108109rem;
+  line-height: 0.8108108108108109rem;
+  padding-left: 0.13513513513513514rem;
+}
+#main .seckill .seckill-title .seckill-icon {
+  margin-bottom: 0.16216216216216217rem;
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.5405405405405406rem;
+  height: 0.6756756756756757rem;
+}
+#main .seckill .seckill-title .seckill-name {
+  margin-left: 0.2702702702702703rem;
+  color: #de181b;
+  font-size: 0.3783783783783784rem;
+}
+#main .seckill .seckill-title .seckill-time {
+  margin-left: 0.13513513513513514rem;
+}
+#main .seckill .seckill-title .seckill-time span {
+  margin-top: 0.13513513513513514rem;
+  text-align: center;
+  display: inline-block;
+  width: 0.40540540540540543rem;
+  height: 0.40540540540540543rem;
+  line-height: 0.40540540540540543rem;
+  background-color: #000;
+  color: white;
+}
+#main .seckill .seckill-title .seckill-time span:nth-child(3n) {
+  background-color: #fff;
+  color: #000;
+}
+#main .seckill .seckill-title .seckill-more {
+  float: right;
+  margin-right: 0.40540540540540543rem;
+}
+#main .seckill .seckill-content ul {
+  padding: 0.2702702702702703rem 0px;
+  display: flex;
+}
+#main .seckill .seckill-content ul li {
+  flex: 1;
+  text-align: center;
+}
+#main .seckill .seckill-content ul li img {
+  display: inline-block;
+  width: 3.189189189189189rem;
+  height: 3.189189189189189rem;
+}
+#main .seckill .seckill-content ul li p > span {
+  color: #de181b;
+}
+#main .seckill .seckill-content ul li + li {
+  border-left: 1px solid #ccc;
+}
+#main .market {
+  margin-top: 0.2702702702702703rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 0.13513514rem #ccc;
+}
+#main .market .market-title {
+  padding-left: 0.5405405405405406rem;
+  height: 0.8108108108108109rem;
+  line-height: 0.8108108108108109rem;
+}
+#main .market .market-title h4 {
+  position: relative;
+  font-weight: normal;
+}
+#main .market .market-title h4::before {
+  content: '';
+  position: absolute;
+  width: 0.10810810810810811rem;
+  height: 0.40540540540540543rem;
+  background-color: #de181b;
+  left: -0.27027027rem;
+  top: 0.1891891891891892rem;
+}
+#main .market .market-content {
+  display: flex;
+}
+#main .market .market-content > div {
+  flex: 1;
+}
+#main .market .market-content > div > a {
+  display: block;
+}
+#main .market .market-content > div > a img {
+  width: 100%;
+}

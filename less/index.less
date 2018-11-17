@@ -1,0 +1,146 @@
+/* 需要引入公共样式在index.less里面引入  就没有必要在页面中引入多个文件减少请求*/
+
+@import "base.less";
+/* 轮播图区域样式 */
+
+#slide {
+    img {
+        width: 100%;
+    }
+}
+
+/* 导航区域 */
+
+#nav {
+    padding: 0.13513513513513514rem;
+    >ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        text-align: center;
+        >li {
+            margin-top: 0.2702702702702703rem;
+            width: 25%;
+            >a {
+                display: block;
+                >img {
+                    width: 1.0810810810810811rem;
+                    height: 1.0810810810810811rem;
+                }
+                p {
+                    margin: 0.13513513513513514rem 0px;
+                }
+            }
+        }
+    }
+}
+
+/* 主体模块 */
+
+#main {
+    background-color: #f5f5f5;
+    padding: 0.2702702702702703rem;
+    /* 京东秒杀区域 */
+    .seckill {
+        box-shadow: 0px 0px 0.13513513513513514rem #ccc;
+        background-color: #fff;
+        .seckill-title {
+            height: 0.8108108108108109rem;
+            line-height: 0.8108108108108109rem;
+            padding-left: 0.13513513513513514rem;
+            .seckill-icon {
+                margin-bottom: 0.16216216216216217rem;
+                display: inline-block;
+                vertical-align: middle;
+                width: 0.5405405405405406rem;
+                height: 0.6756756756756757rem;
+            }
+            .seckill-name {
+                margin-left: 0.2702702702702703rem;
+                color: @main-color;
+                font-size: 0.3783783783783784rem;
+            }
+            .seckill-time {
+                margin-left: 0.13513513513513514rem;
+                span {
+                    margin-top: 0.13513513513513514rem;
+                    text-align: center;
+                    display: inline-block;
+                    width: 0.40540540540540543rem;
+                    height: 0.40540540540540543rem;
+                    line-height: 0.40540540540540543rem;
+                    background-color: #000;
+                    color: white;
+                    &:nth-child(3n) {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+            }
+            .seckill-more {
+                float: right;
+                margin-right: 0.40540540540540543rem;
+            }
+        }
+        .seckill-content {
+            ul {
+                padding: 0.2702702702702703rem 0px;
+                display: flex;
+                li {
+                    flex: 1;
+                    text-align: center;
+                    img {
+                        display: inline-block;
+                        width: 3.189189189189189rem;
+                        height: 3.189189189189189rem;
+                    }
+                    p {
+                        >span {
+                            color: @main-color;
+                        }
+                    }
+                    &+li {
+                        border-left: 1px solid @border-color;
+                    }
+                }
+            }
+        }
+    }
+    /* 京东超市区域 */
+    .market {
+        margin-top: 0.2702702702702703rem;
+        background-color: #fff;
+        box-shadow:0px 0px 0.13513513513513514rem @border-color;
+        .market-title {
+            padding-left: 0.5405405405405406rem;
+            height: 0.8108108108108109rem;
+            line-height: 0.8108108108108109rem;
+            h4 {
+                position: relative;
+                &::before {
+                    content: '';
+                    position: absolute;
+                    width: 0.10810810810810811rem;
+                    height: 0.40540540540540543rem;
+                    background-color: @main-color;
+                    left: -0.2702702702702703rem;
+                    top: 0.1891891891891892rem;
+                }
+                font-weight: normal;
+            }
+        }
+        .market-content {
+            display: flex;
+            >div {
+                flex: 1;
+                >a {
+                    display: block;
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
